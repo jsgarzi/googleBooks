@@ -1,0 +1,24 @@
+.siteName {
+    color : white!important;
+    margin-top: 10px;
+}
+
+.linkStyle {
+    color: white;
+}
+
+.simplebox {
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.buttonStyle {
+    border: white!important;
+    color: white;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
