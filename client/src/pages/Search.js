@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import API from '../utils/API'
 import Navbar from "../components/Navbar/Navbar"
+import ListComponent from "../components/ListComponent/ListComponent"
 
 function Search() {
 
     const [books, setBook] = useState([])
     const [search, setSearch] = useState([])
     
-    // useEffect(() => {
-    
-    // }, [])
+    useEffect(() => {
+        
+    }, [])
 
     function updateSearch(e) {
         setSearch(e.target.value)
@@ -54,7 +55,10 @@ function Search() {
                 search={searchBook}
                 page="search"
             />
-            
+
+            <ListComponent
+                data={books}
+            />    
         </div>
     )
 }
