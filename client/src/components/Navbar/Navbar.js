@@ -17,7 +17,7 @@ function Navbar(props) {
                 {isSearch ?
                     <form className="d-flex">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={props.updateSearch} />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
+                        <button className="btn btn-outline-success" type="submit" onClick={props.search}>Search</button>
                     </form>
                     : <></>}
             </div>
