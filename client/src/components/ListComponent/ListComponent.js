@@ -1,4 +1,5 @@
 import React from 'react'
+import API from '../../utils/API'
 
 function ListComponent(props) {
 
@@ -7,7 +8,9 @@ function ListComponent(props) {
     }
 
     function saveBook(e) {
-        console.log(props.data[e.target.id])
+        API.saveBook(props.data[e.target.id]).then(res => {
+            console.log(res)
+        })
     }
 
     return (
@@ -23,7 +26,7 @@ function ListComponent(props) {
                                 <div className="card-body">
                                     <h5 className="card-title">{book.title}</h5>
                                     <p className="card-text">{book.description}</p>
-                                    <button onClick={openLink} value={book.links} className="btn btn-primary">view book</button>
+                                    <button onClick={openLink} value={book.link} className="btn btn-primary">view book</button>
                                     <button onClick={saveBook} id={i} className="btn btn-primary">save book</button>
                                 </div>
                             </div>

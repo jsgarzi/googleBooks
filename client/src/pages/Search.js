@@ -40,7 +40,7 @@ function Search() {
                     author: author,
                     description: book.volumeInfo.description,
                     image: image,
-                    links: book.volumeInfo.infoLink
+                    link: book.volumeInfo.infoLink
                 })
             })
             
