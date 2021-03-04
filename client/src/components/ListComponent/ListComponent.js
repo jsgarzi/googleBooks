@@ -1,15 +1,25 @@
 import React from 'react'
 import API from '../../utils/API'
 
+let isSearch = false;
+
 function ListComponent(props) {
+
+    if (props.page === "search") {
+        isSearch = true
+    }
 
     function openLink (e) {
         window.location.href = e.target.value
     }
 
     function saveBook(e) {
-        API.saveBook(props.data[e.target.id]).then(res => {
-            console.log(res)
+        API.saveBook(props.data[e.target.id])
+    }
+
+    function deleteBook(e) {
+        API.deleteBook(e.target.id).then(() => {
+            window.location.reload();
         })
     }
 
@@ -26,9 +36,15 @@ function ListComponent(props) {
                                 <div className="card-body">
                                     <h5 className="card-title">{book.title}</h5>
                                     <p className="card-text">{book.description}</p>
-                                    <button onClick={openLink} value={book.link} className="btn btn-primary">view book</button>
-                                    <button onClick={saveBook} id={i} className="btn btn-primary">save book</button>
-                                </div>
+                                    {isSearch ? 
+                                    <div> 
+                                        <button onClick={openLink} value={book.link} className="btn btn-primary">view book</button>
+                                        <button onClick={saveBook} id={i} className="btn btn-primary">save book</button>
+                                    </div>
+                                    : 
+                                    <button onClick={deleteBook} id={book._id} className="btn btn-primary">Delete</button>
+                                    } 
+                                    </div>
                             </div>
                         </div>
                     </div>

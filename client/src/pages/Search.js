@@ -58,6 +58,7 @@ function Search() {
 
             <ListComponent
                 data={books}
+                page="search"
             />    
         </div>
     )
